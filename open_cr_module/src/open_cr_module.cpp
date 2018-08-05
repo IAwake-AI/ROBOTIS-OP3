@@ -24,9 +24,9 @@ namespace robotis_op
 {
 
 OpenCRModule::OpenCRModule()
-    : control_cycle_msec_(8),
+    : control_cycle_msec_(30),
       DEBUG_PRINT(false),
-      present_volt_(0.0)
+      present_volt_(12.0)
 {
   module_name_ = "open_cr_module";  // set unique module name
 
@@ -39,15 +39,15 @@ OpenCRModule::OpenCRModule()
   result_["acc_z"] = 0.0;
 
   result_["button_mode"] = 0;
-  result_["button_start"] = 0;
+  result_["button_start"] = 1;
   result_["button_user"] = 0;
 
   result_["present_voltage"] = 0.0;
 
   buttons_["button_mode"] = false;
-  buttons_["button_start"] = false;
+  buttons_["button_start"] = true;
   buttons_["button_user"] = false;
-  buttons_["published_mode"] = false;
+  buttons_["published_mode"] = true;
   buttons_["published_start"] = false;
   buttons_["published_user"] = false;
 
@@ -64,6 +64,8 @@ OpenCRModule::OpenCRModule()
   previous_result_["acc_z"] = 0.0;
 
   last_msg_time_ = ros::Time::now();
+  
+  ROS_INFO("Finished setting up the OpenCR module");
 }
 
 OpenCRModule::~OpenCRModule()
@@ -170,7 +172,7 @@ void OpenCRModule::publishIMU()
 {
   // fusion imu data
   imu_msg_.header.stamp = ros::Time::now();
-  imu_msg_.header.frame_id = "body_link";
+  imu_msg_.header.frame_id = "pelvis";
   double filter_alpha = 0.4;
 
   //in rad/s

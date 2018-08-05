@@ -4,7 +4,7 @@ head_pan:
   operating_mode: 3
   position_d_gain: 0
   position_i_gain: 0
-  position_p_gain: 100
+  position_p_gain: 801
   return_delay_time: 1
 head_tilt:
   max_position_limit: 4095
@@ -12,7 +12,7 @@ head_tilt:
   operating_mode: 3
   position_d_gain: 0
   position_i_gain: 0
-  position_p_gain: 100
+  position_p_gain: 800
   return_delay_time: 1
 l_ank_pitch:
   max_position_limit: 4095
@@ -20,7 +20,15 @@ l_ank_pitch:
   operating_mode: 3
   position_d_gain: 0
   position_i_gain: 0
-  position_p_gain: 100
+  position_p_gain: 800
+  return_delay_time: 1
+l_ank_roll:
+  max_position_limit: 4095
+  min_position_limit: 0
+  operating_mode: 3
+  position_d_gain: 0
+  position_i_gain: 0
+  position_p_gain: 800
   return_delay_time: 1
 l_el:
   max_position_limit: 4095
@@ -28,7 +36,7 @@ l_el:
   operating_mode: 3
   position_d_gain: 0
   position_i_gain: 0
-  position_p_gain: 100
+  position_p_gain: 800
   return_delay_time: 1
   shutdown: 56
 l_hip_pitch:
@@ -81,7 +89,7 @@ l_sho_roll:
   position_p_gain: 800
   return_delay_time: 1
   shutdown: 56
-l_sho_yaw:
+r_ank_pitch:
   max_position_limit: 4095
   min_position_limit: 0
   operating_mode: 3
@@ -89,8 +97,7 @@ l_sho_yaw:
   position_i_gain: 0
   position_p_gain: 800
   return_delay_time: 1
-  shutdown: 56
-r_ank_pitch:
+r_ank_roll:
   max_position_limit: 4095
   min_position_limit: 0
   operating_mode: 3
@@ -157,7 +164,7 @@ r_sho_roll:
   position_p_gain: 800
   return_delay_time: 1
   shutdown: 56
-r_sho_yaw:
+abs_y:
   max_position_limit: 4095
   min_position_limit: 0
   operating_mode: 3
@@ -166,8 +173,8 @@ r_sho_yaw:
   position_p_gain: 800
   return_delay_time: 1
   shutdown: 56
-abs_y:
-  max_position_limit: 4095
+r_sho_roll:
+  abs_x: 4095
   min_position_limit: 0
   operating_mode: 3
   position_d_gain: 0
@@ -203,4 +210,3 @@ bust_x:
   return_delay_time: 1
   shutdown: 56
   
-

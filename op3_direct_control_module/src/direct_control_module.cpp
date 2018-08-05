@@ -23,7 +23,7 @@ namespace robotis_op
 {
 
 DirectControlModule::DirectControlModule()
-  : control_cycle_msec_(0),
+  : control_cycle_msec_(30),
     stop_process_(false),
     is_moving_(false),
     is_updated_(false),
@@ -37,11 +37,11 @@ DirectControlModule::DirectControlModule()
     check_collision_(true),
     moving_time_(3.0),
     BASE_INDEX(0),
-    HEAD_INDEX(20),
-    RIGHT_END_EFFECTOR_INDEX(21),
-    RIGHT_ELBOW_INDEX(5),
-    LEFT_END_EFFECTOR_INDEX(22),
-    LEFT_ELBOW_INDEX(6),
+    HEAD_INDEX(27),
+    RIGHT_END_EFFECTOR_INDEX(38),
+    RIGHT_ELBOW_INDEX(7),
+    LEFT_END_EFFECTOR_INDEX(39),
+    LEFT_ELBOW_INDEX(8),
     DEBUG(false)
 {
   enable_ = false;
@@ -465,6 +465,7 @@ bool DirectControlModule::checkSelfCollision()
       ROS_WARN_STREAM_THROTTLE(1, "Self Collision : RIGHT_ARM and BASE | "  << diff_length << " / " << collision_boundary);
     collision_["r_sho_pitch"] = true;
     collision_["r_sho_roll"] = true;
+    collision_["r_sho_yaw"] = true;
     collision_["r_el"] = true;
 
     collision_result = true;
@@ -482,6 +483,7 @@ bool DirectControlModule::checkSelfCollision()
       ROS_WARN_STREAM_THROTTLE(1, "Self Collision : RIGHT_ELBOW and BASE | " << diff_length << " / " << collision_boundary);
     collision_["r_sho_pitch"] = true;
     collision_["r_sho_roll"] = true;
+    collision_["r_sho_yaw"] = true;
 
     collision_result = true;
   }
@@ -498,6 +500,7 @@ bool DirectControlModule::checkSelfCollision()
       ROS_WARN_STREAM_THROTTLE(1, "Self Collision : LEFT_ARM and BASE | " << diff_length << " / " << collision_boundary);
     collision_["l_sho_pitch"] = true;
     collision_["l_sho_roll"] = true;
+    collision_["l_sho_yaw"] = true;
     collision_["l_el"] = true;
 
     collision_result = true;
@@ -515,6 +518,7 @@ bool DirectControlModule::checkSelfCollision()
       ROS_WARN_STREAM_THROTTLE(1, "Self Collision : LEFT_ELBOW and BASE | " << diff_length << " / " << collision_boundary);
     collision_["l_sho_pitch"] = true;
     collision_["l_sho_roll"] = true;
+    collision_["l_sho_yaw"] = true;
 
     collision_result = true;
   }

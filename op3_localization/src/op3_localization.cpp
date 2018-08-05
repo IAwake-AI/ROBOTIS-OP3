@@ -165,7 +165,7 @@ void OP3Localization::process()
   ros::Duration transform_tolerance(transform_tolerance_);
   ros::Time transform_expiration = (pelvis_pose_.header.stamp + transform_tolerance);
 
-  tf::StampedTransform tmp_tf_stamped(pelvis_trans_, transform_expiration, "world", "body_link");
+  tf::StampedTransform tmp_tf_stamped(pelvis_trans_, transform_expiration, "world", "pelvis");
 
   broadcaster_.sendTransform(tmp_tf_stamped);
 }

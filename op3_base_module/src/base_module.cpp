@@ -23,7 +23,7 @@ namespace robotis_op
 {
 
 BaseModule::BaseModule()
-  : control_cycle_msec_(0),
+  : control_cycle_msec_(30),
     has_goal_joints_(false),
     ini_pose_only_(false),
     init_pose_file_path_("")
@@ -61,7 +61,7 @@ void BaseModule::initialize(const int control_cycle_msec, robotis_framework::Rob
   ros::NodeHandle ros_node;
 
   /* Load ROS Parameter */
-  ros_node.param<std::string>("init_pose_file_path", init_pose_file_path_, ros::package::getPath("op3_base_module") + "/data/ini_pose.yaml");
+  ros_node.param<std::string>("init_pose_file_path", init_pose_file_path_, ros::package::getPath("op3_base_module") + "/data/init_pose.yaml");
 
   /* publish topics */
   status_msg_pub_ = ros_node.advertise<robotis_controller_msgs::StatusMsg>("/robotis/status", 1);
@@ -138,6 +138,9 @@ void BaseModule::parseInitPoseData(const std::string &path)
 
   base_module_state_->all_time_steps_ = int(base_module_state_->mov_time_ / base_module_state_->smp_time_) + 1;
   base_module_state_->calc_joint_tra_.resize(base_module_state_->all_time_steps_, MAX_JOINT_ID + 1);
+
+
+  ROS_INFO("Target Data has been parsed\n");
 }
 
 void BaseModule::queueThread()
@@ -338,7 +341,10 @@ void BaseModule::process(std::map<std::string, robotis_framework::Dynamixel *> d
   if (base_module_state_->is_moving_ == true)
   {
     if (base_module_state_->cnt_ == 1)
+    {
+      ROS_INFO("Init Pose Status: starting");
       publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_INFO, "Start Init Pose");
+    }
 
     for (int id = 1; id <= MAX_JOINT_ID; id++)
       joint_state_->goal_joint_state_[id].position_ = base_module_state_->calc_joint_tra_(base_module_state_->cnt_, id);

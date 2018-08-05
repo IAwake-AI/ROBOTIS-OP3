@@ -1,8 +1,8 @@
 offset:
-  head_pan: 0
-  head_tilt: 0
+  head_pan:  0
+  head_tilt:  0
   l_ank_pitch: 0
-  l_ank_roll: 0.0
+  l_ank_roll: 0
   l_el: 0
   l_hip_pitch: 0
   l_hip_roll: 0
@@ -10,6 +10,7 @@ offset:
   l_knee: 0
   l_sho_pitch: 0
   l_sho_roll: 0
+  l_sho_yaw: 0  
   r_ank_pitch: 0
   r_ank_roll: 0
   r_el: 0
@@ -19,3 +20,9 @@ offset:
   r_knee: 0
   r_sho_pitch: 0
   r_sho_roll: 0
+  r_sho_yaw: 0
+  abs_y: 0
+  abs_x: 0
+  abs_z: 0 
+  bust_y: 0
+  bust_x: 0

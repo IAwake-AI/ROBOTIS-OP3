@@ -22,7 +22,7 @@ namespace robotis_op
 {
 
 WalkingModule::WalkingModule()
-    : control_cycle_msec_(8),
+    : control_cycle_msec_(30),
       DEBUG(false)
 {
   enable_ = false;
@@ -53,6 +53,7 @@ WalkingModule::WalkingModule()
   result_["r_sho_pitch"] = new robotis_framework::DynamixelState();
   result_["l_sho_pitch"] = new robotis_framework::DynamixelState();
 
+  /** TODO IAwake: make sure all match motor ID */
   // joint table
   joint_table_["r_hip_yaw"] = 0;
   joint_table_["r_hip_roll"] = 1;

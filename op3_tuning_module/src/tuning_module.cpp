@@ -23,7 +23,7 @@ namespace robotis_op
 {
 
 TuningModule::TuningModule()
-  : control_cycle_msec_(0),
+  : control_cycle_msec_(30),
     has_goal_joints_(false),
     ini_pose_only_(false),
     get_tuning_data_(false)
@@ -122,7 +122,7 @@ bool TuningModule::parseOffsetData(const std::string &path)
     doc = YAML::LoadFile(path.c_str());
   } catch (const std::exception& e)
   {
-    ROS_ERROR("Fail to load offset yaml file.");
+    ROS_ERROR("TuningModule: Fail to load offset yaml file.");
     return false;
   }
 
@@ -145,8 +145,6 @@ bool TuningModule::parseOffsetData(const std::string &path)
 
 bool TuningModule::parseInitPoseData(const std::string &path)
 {
-  ROS_INFO("parse pose for moving init pose");
-
   YAML::Node doc;
   try
   {
@@ -159,7 +157,7 @@ bool TuningModule::parseInitPoseData(const std::string &path)
   }
 
   YAML::Node init_pose_node;
-  init_pose_node = doc["init_pose"];
+  init_pose_node = doc["ini_pose"];
 
   if(init_pose_node == NULL)
   {
@@ -177,7 +175,7 @@ bool TuningModule::parseInitPoseData(const std::string &path)
   tuning_module_state_->via_num_ = 0;
 
   // parse target pose
-  YAML::Node tar_pose_node = init_pose_node["target_pose"];
+  YAML::Node tar_pose_node = init_pose_node["tar_pose"];
   for (YAML::iterator yaml_it = tar_pose_node.begin(); yaml_it != tar_pose_node.end(); ++yaml_it)
   {
     std::string joint_name;
@@ -197,6 +195,8 @@ bool TuningModule::parseInitPoseData(const std::string &path)
 
   tuning_module_state_->all_time_steps_ = int(tuning_module_state_->mov_time_ / tuning_module_state_->smp_time_) + 1;
   tuning_module_state_->calc_joint_tra_.resize(tuning_module_state_->all_time_steps_, MAX_JOINT_ID + 1);
+
+  ROS_INFO("Loading of pose data complete.");
 
   return true;
 }
@@ -941,7 +941,7 @@ void TuningModule::saveOffsetToYaml(const std::string &path)
 
 void TuningModule::parseDxlInit(const std::string &path)
 {
-  ROS_WARN("Get the init gain from Dxl init file");
+  //ROS_WARN("Get the init gain from Dxl init file");
   YAML::Node doc;
   try
   {

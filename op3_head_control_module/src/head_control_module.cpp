@@ -23,7 +23,7 @@ namespace robotis_op
 {
 
 HeadControlModule::HeadControlModule()
-  : control_cycle_msec_(0),
+  : control_cycle_msec_(30),
     stop_process_(false),
     is_moving_(false),
     is_direct_control_(true),
@@ -69,7 +69,7 @@ void HeadControlModule::initialize(const int control_cycle_msec, robotis_framewo
   ros::NodeHandle param_nh("~");
   angle_unit_ = param_nh.param("angle_unit", 35.0);
 
-  ROS_WARN_STREAM("Head control - angle unit : " << angle_unit_);
+  //ROS_WARN_STREAM("Head control - angle unit : " << angle_unit_);
 
   queue_thread_ = boost::thread(boost::bind(&HeadControlModule::queueThread, this));
 

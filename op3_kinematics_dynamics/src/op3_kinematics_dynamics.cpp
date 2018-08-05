@@ -39,7 +39,7 @@ OP3KinematicsDynamics::OP3KinematicsDynamics(TreeSelect tree)
     op3_link_data_[0]->name_ = "base";
     op3_link_data_[0]->parent_ = -1;
     op3_link_data_[0]->sibling_ = -1;
-    op3_link_data_[0]->child_ = 23;
+    op3_link_data_[0]->child_ = 32;
     op3_link_data_[0]->mass_ = 0.0;
     op3_link_data_[0]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
     op3_link_data_[0]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
@@ -50,85 +50,85 @@ OP3KinematicsDynamics::OP3KinematicsDynamics(TreeSelect tree)
 
     /* ----- passive joint -----*/
 
-    op3_link_data_[23]->name_ = "passive_x";
-    op3_link_data_[23]->parent_ = 0;
-    op3_link_data_[23]->sibling_ = -1;
-    op3_link_data_[23]->child_ = 24;
-    op3_link_data_[23]->mass_ = 0.0;
-    op3_link_data_[23]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[23]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[23]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[23]->joint_limit_max_ = 100.0;
-    op3_link_data_[23]->joint_limit_min_ = -100.0;
-    op3_link_data_[23]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[32]->name_ = "passive_x";
+    op3_link_data_[32]->parent_ = 0;
+    op3_link_data_[32]->sibling_ = -1;
+    op3_link_data_[32]->child_ = 33;
+    op3_link_data_[32]->mass_ = 0.0;
+    op3_link_data_[32]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[32]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[32]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[32]->joint_limit_max_ = 100.0;
+    op3_link_data_[32]->joint_limit_min_ = -100.0;
+    op3_link_data_[32]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
-    op3_link_data_[24]->name_ = "passive_y";
-    op3_link_data_[24]->parent_ = 23;
-    op3_link_data_[24]->sibling_ = -1;
-    op3_link_data_[24]->child_ = 25;
-    op3_link_data_[24]->mass_ = 0.0;
-    op3_link_data_[24]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[24]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[24]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[24]->joint_limit_max_ = 100.0;
-    op3_link_data_[24]->joint_limit_min_ = -100.0;
-    op3_link_data_[24]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[33]->name_ = "passive_y";
+    op3_link_data_[33]->parent_ = 32;
+    op3_link_data_[33]->sibling_ = -1;
+    op3_link_data_[33]->child_ = 34;
+    op3_link_data_[33]->mass_ = 0.0;
+    op3_link_data_[33]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[33]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[33]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[33]->joint_limit_max_ = 100.0;
+    op3_link_data_[33]->joint_limit_min_ = -100.0;
+    op3_link_data_[33]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
-    op3_link_data_[25]->name_ = "passive_z";
-    op3_link_data_[25]->parent_ = 24;
-    op3_link_data_[25]->sibling_ = -1;
-    op3_link_data_[25]->child_ = 26;
-    op3_link_data_[25]->mass_ = 0.0;
-    op3_link_data_[25]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.385);
-    op3_link_data_[25]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[25]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[25]->joint_limit_max_ = 100.0;
-    op3_link_data_[25]->joint_limit_min_ = -100.0;
-    op3_link_data_[25]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[34]->name_ = "passive_z";
+    op3_link_data_[34]->parent_ = 33;
+    op3_link_data_[34]->sibling_ = -1;
+    op3_link_data_[34]->child_ = 35;
+    op3_link_data_[34]->mass_ = 0.0;
+    op3_link_data_[34]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.385);
+    op3_link_data_[34]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[34]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[34]->joint_limit_max_ = 100.0;
+    op3_link_data_[34]->joint_limit_min_ = -100.0;
+    op3_link_data_[34]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
-    op3_link_data_[26]->name_ = "passive_roll";
-    op3_link_data_[26]->parent_ = 25;
-    op3_link_data_[26]->sibling_ = -1;
-    op3_link_data_[26]->child_ = 27;
-    op3_link_data_[26]->mass_ = 0.0;
-    op3_link_data_[26]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[26]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
-    op3_link_data_[26]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[26]->joint_limit_max_ = 100.0;
-    op3_link_data_[26]->joint_limit_min_ = -100.0;
-    op3_link_data_[26]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[35]->name_ = "passive_roll";
+    op3_link_data_[35]->parent_ = 34;
+    op3_link_data_[35]->sibling_ = -1;
+    op3_link_data_[35]->child_ = 36;
+    op3_link_data_[35]->mass_ = 0.0;
+    op3_link_data_[35]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[35]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
+    op3_link_data_[35]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[35]->joint_limit_max_ = 100.0;
+    op3_link_data_[35]->joint_limit_min_ = -100.0;
+    op3_link_data_[35]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
-    op3_link_data_[27]->name_ = "passive_pitch";
-    op3_link_data_[27]->parent_ = 26;
-    op3_link_data_[27]->sibling_ = -1;
-    op3_link_data_[27]->child_ = 28;
-    op3_link_data_[27]->mass_ = 0.0;
-    op3_link_data_[27]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[27]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 1.0, 0.0);
-    op3_link_data_[27]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[27]->joint_limit_max_ = 100.0;
-    op3_link_data_[27]->joint_limit_min_ = -100.0;
-    op3_link_data_[27]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[36]->name_ = "passive_pitch";
+    op3_link_data_[36]->parent_ = 35;
+    op3_link_data_[36]->sibling_ = -1;
+    op3_link_data_[36]->child_ = 37;
+    op3_link_data_[36]->mass_ = 0.0;
+    op3_link_data_[36]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[36]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 1.0, 0.0);
+    op3_link_data_[36]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[36]->joint_limit_max_ = 100.0;
+    op3_link_data_[36]->joint_limit_min_ = -100.0;
+    op3_link_data_[36]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
-    op3_link_data_[28]->name_ = "passive_yaw";
-    op3_link_data_[28]->parent_ = 27;
-    op3_link_data_[28]->sibling_ = -1;
-    op3_link_data_[28]->child_ = 29;
-    op3_link_data_[28]->mass_ = 0.0;
-    op3_link_data_[28]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[28]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 1.0);
-    op3_link_data_[28]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[28]->joint_limit_max_ = 100.0;
-    op3_link_data_[28]->joint_limit_min_ = -100.0;
-    op3_link_data_[28]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[37]->name_ = "passive_yaw";
+    op3_link_data_[37]->parent_ = 36;
+    op3_link_data_[37]->sibling_ = -1;
+    op3_link_data_[37]->child_ = 29;
+    op3_link_data_[37]->mass_ = 0.0;
+    op3_link_data_[37]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[37]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 1.0);
+    op3_link_data_[37]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[37]->joint_limit_max_ = 100.0;
+    op3_link_data_[37]->joint_limit_min_ = -100.0;
+    op3_link_data_[37]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
     /* ----- body -----*/
 
     // pelvis_link
     op3_link_data_[29]->name_ = "pelvis";
-    op3_link_data_[29]->parent_ = 28;
+    op3_link_data_[29]->parent_ = 37;
     op3_link_data_[29]->sibling_ = -1;
-    op3_link_data_[29]->child_ = 19;
+    op3_link_data_[29]->child_ = 26;
     op3_link_data_[29]->mass_ = 6.869;
     op3_link_data_[29]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
     op3_link_data_[29]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
@@ -141,31 +141,31 @@ OP3KinematicsDynamics::OP3KinematicsDynamics(TreeSelect tree)
     /* ----- head -----*/
 
     // head_pan
-    op3_link_data_[19]->name_ = "head_pan";
-    op3_link_data_[19]->parent_ = 29;
-    op3_link_data_[19]->sibling_ = 1;
-    op3_link_data_[19]->child_ = 20;
-    op3_link_data_[19]->mass_ = 0.087;
-    op3_link_data_[19]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0205);
-    op3_link_data_[19]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 1.0);
-    op3_link_data_[19]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.000, -0.002, 0.010);
-    op3_link_data_[19]->joint_limit_max_ = 0.5 * M_PI;
-    op3_link_data_[19]->joint_limit_min_ = -0.5 * M_PI;
-    op3_link_data_[19]->inertia_ = robotis_framework::getInertiaXYZ(0.00011, 0.00000, 0.00000, 0.00003, 0.00000,
+    op3_link_data_[26]->name_ = "head_pan";
+    op3_link_data_[26]->parent_ = 29;
+    op3_link_data_[26]->sibling_ = 1;
+    op3_link_data_[26]->child_ = 27;
+    op3_link_data_[26]->mass_ = 0.087;
+    op3_link_data_[26]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0205);
+    op3_link_data_[26]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 1.0);
+    op3_link_data_[26]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.000, -0.002, 0.010);
+    op3_link_data_[26]->joint_limit_max_ = 0.5 * M_PI;
+    op3_link_data_[26]->joint_limit_min_ = -0.5 * M_PI;
+    op3_link_data_[36]->inertia_ = robotis_framework::getInertiaXYZ(0.00011, 0.00000, 0.00000, 0.00003, 0.00000,
                                                                     0.00012);
 
     // head_tilt
-    op3_link_data_[20]->name_ = "head_tilt";
-    op3_link_data_[20]->parent_ = 19;
-    op3_link_data_[20]->sibling_ = -1;
-    op3_link_data_[20]->child_ = -1;
-    op3_link_data_[20]->mass_ = 0.724;
-    op3_link_data_[20]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.03);
-    op3_link_data_[20]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, -1.0, 0.0);
-    op3_link_data_[20]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.009, 0.046, 0.022);
-    op3_link_data_[20]->joint_limit_max_ = 0.5 * M_PI;
-    op3_link_data_[20]->joint_limit_min_ = -0.5 * M_PI;
-    op3_link_data_[20]->inertia_ = robotis_framework::getInertiaXYZ(0.00113, 0.00001, -0.00005, 0.00114, 0.00002,
+    op3_link_data_[27]->name_ = "head_tilt";
+    op3_link_data_[27]->parent_ = 26;
+    op3_link_data_[27]->sibling_ = -1;
+    op3_link_data_[27]->child_ = -1;
+    op3_link_data_[27]->mass_ = 0.724;
+    op3_link_data_[27]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.03);
+    op3_link_data_[27]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, -1.0, 0.0);
+    op3_link_data_[27]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.009, 0.046, 0.022);
+    op3_link_data_[27]->joint_limit_max_ = 0.5 * M_PI;
+    op3_link_data_[27]->joint_limit_min_ = -0.5 * M_PI;
+    op3_link_data_[27]->inertia_ = robotis_framework::getInertiaXYZ(0.00113, 0.00001, -0.00005, 0.00114, 0.00002,
                                                                     0.00084);
 
     /*----- right arm -----*/
@@ -197,32 +197,47 @@ OP3KinematicsDynamics::OP3KinematicsDynamics(TreeSelect tree)
     op3_link_data_[3]->inertia_ = robotis_framework::getInertiaXYZ(0.00043, 0.00000, 0.00000, 0.00112, 0.00000,
                                                                    0.00113);
 
-    // right arm elbow
-    op3_link_data_[5]->name_ = "r_el";
+    // right arm shoulder yaw
+    op3_link_data_[5]->name_ = "r_sho_yaw";
     op3_link_data_[5]->parent_ = 3;
     op3_link_data_[5]->sibling_ = -1;
-    op3_link_data_[5]->child_ = 21;
-    op3_link_data_[5]->mass_ = 1.122;
-    op3_link_data_[5]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, -0.09, 0.0);
-    op3_link_data_[5]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
-    op3_link_data_[5]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.000, -0.073, 0.000);
-    op3_link_data_[5]->joint_limit_max_ = 0.5 * M_PI;
+    op3_link_data_[5]->child_ = 7;
+    op3_link_data_[5]->mass_ = 0.875;
+    op3_link_data_[5]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, -0.0245, -0.016);
+    op3_link_data_[5]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -1.0);
+    op3_link_data_[5]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.060, -0.002, 0.000);
+    op3_link_data_[5]->joint_limit_max_ = 0.3 * M_PI;
     op3_link_data_[5]->joint_limit_min_ = -0.5 * M_PI;
-    op3_link_data_[5]->inertia_ = robotis_framework::getInertiaXYZ(0.00277, 0.00002, -0.00001, 0.00090, 0.00004,
+    op3_link_data_[5]->inertia_ = robotis_framework::getInertiaXYZ(0.00043, 0.00000, 0.00000, 0.00112, 0.00000,
+                                                                   0.00113);
+
+
+    // right arm elbow
+    op3_link_data_[7]->name_ = "r_el";
+    op3_link_data_[7]->parent_ = 5;
+    op3_link_data_[7]->sibling_ = -1;
+    op3_link_data_[7]->child_ = 38;
+    op3_link_data_[7]->mass_ = 1.122;
+    op3_link_data_[7]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, -0.09, 0.0);
+    op3_link_data_[7]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
+    op3_link_data_[7]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.000, -0.073, 0.000);
+    op3_link_data_[7]->joint_limit_max_ = 0.5 * M_PI;
+    op3_link_data_[7]->joint_limit_min_ = -0.5 * M_PI;
+    op3_link_data_[7]->inertia_ = robotis_framework::getInertiaXYZ(0.00277, 0.00002, -0.00001, 0.00090, 0.00004,
                                                                    0.00255);
 
     // right arm end effector
-    op3_link_data_[21]->name_ = "r_arm_end";
-    op3_link_data_[21]->parent_ = 5;
-    op3_link_data_[21]->sibling_ = -1;
-    op3_link_data_[21]->child_ = -1;
-    op3_link_data_[21]->mass_ = 0.0;
-    op3_link_data_[21]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, -0.15, 0.0);
-    op3_link_data_[21]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[21]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[21]->joint_limit_max_ = 100.0;
-    op3_link_data_[21]->joint_limit_min_ = -100.0;
-    op3_link_data_[21]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[38]->name_ = "r_arm_end";
+    op3_link_data_[38]->parent_ = 5;
+    op3_link_data_[38]->sibling_ = -1;
+    op3_link_data_[38]->child_ = -1;
+    op3_link_data_[38]->mass_ = 0.0;
+    op3_link_data_[38]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, -0.15, 0.0);
+    op3_link_data_[38]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[38]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[38]->joint_limit_max_ = 100.0;
+    op3_link_data_[38]->joint_limit_min_ = -100.0;
+    op3_link_data_[38]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
     /*----- left arm -----*/
 
@@ -232,8 +247,8 @@ OP3KinematicsDynamics::OP3KinematicsDynamics(TreeSelect tree)
     op3_link_data_[2]->sibling_ = -1;
     op3_link_data_[2]->child_ = 4;
     op3_link_data_[2]->mass_ = 0.194;
-    op3_link_data_[2]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0575, 0.0);
-    op3_link_data_[2]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 1.0, 0.0);
+    op3_link_data_[2]->relative_position_ = robotis_framework::getTransitionXYZ(0.0771000000000001, 0.0499999999999999, 0.00399999999999997);
+    op3_link_data_[2]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, -1.0, 0.0);
     op3_link_data_[2]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.003, 0.020, -0.005);
     op3_link_data_[2]->joint_limit_max_ = 0.5 * M_PI;
     op3_link_data_[2]->joint_limit_min_ = -0.5 * M_PI;
@@ -246,7 +261,7 @@ OP3KinematicsDynamics::OP3KinematicsDynamics(TreeSelect tree)
     op3_link_data_[4]->sibling_ = -1;
     op3_link_data_[4]->child_ = 6;
     op3_link_data_[4]->mass_ = 0.875;
-    op3_link_data_[4]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0245, -0.016);
+    op3_link_data_[4]->relative_position_ = robotis_framework::getTransitionXYZ(0.0284, 0.0, 0.0);
     op3_link_data_[4]->joint_axis_ = robotis_framework::getTransitionXYZ(-1.0, 0.0, 0.0);
     op3_link_data_[4]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.060, 0.002, 0.000);
     op3_link_data_[4]->joint_limit_max_ = 0.5 * M_PI;
@@ -254,53 +269,53 @@ OP3KinematicsDynamics::OP3KinematicsDynamics(TreeSelect tree)
     op3_link_data_[4]->inertia_ = robotis_framework::getInertiaXYZ(0.00043, 0.00000, 0.00000, 0.00112, 0.00000,
                                                                    0.00113);
 
-    // left arm elbow
-    op3_link_data_[6]->name_ = "l_el";
+    // left arm shoulder yaw
+    op3_link_data_[6]->name_ = "l_sho_yaw";
     op3_link_data_[6]->parent_ = 4;
     op3_link_data_[6]->sibling_ = -1;
-    op3_link_data_[6]->child_ = 22;
-    op3_link_data_[6]->mass_ = 1.122;
-    op3_link_data_[6]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.09, 0.0);
-    op3_link_data_[6]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
-    op3_link_data_[6]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.000, 0.073, 0.000);
+    op3_link_data_[6]->child_ = 8;
+    op3_link_data_[6]->mass_ = 0.875;
+    op3_link_data_[6]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.03625, 0.0185000000000001);
+    op3_link_data_[6]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -1.0);
+    op3_link_data_[6]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.060, 0.002, 0.000);
     op3_link_data_[6]->joint_limit_max_ = 0.5 * M_PI;
-    op3_link_data_[6]->joint_limit_min_ = -0.5 * M_PI;
-    op3_link_data_[6]->inertia_ = robotis_framework::getInertiaXYZ(0.00277, -0.00002, -0.00001, 0.00090, -0.00004,
+    op3_link_data_[6]->joint_limit_min_ = -0.3 * M_PI;
+    op3_link_data_[6]->inertia_ = robotis_framework::getInertiaXYZ(0.00043, 0.00000, 0.00000, 0.00112, 0.00000,
+                                                                   0.00113);
+
+    // left arm elbow
+    op3_link_data_[8]->name_ = "l_el";
+    op3_link_data_[8]->parent_ = 6;
+    op3_link_data_[8]->sibling_ = -1;
+    op3_link_data_[8]->child_ = 39;
+    op3_link_data_[8]->mass_ = 1.122;
+    op3_link_data_[8]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.112, 0.0);
+    op3_link_data_[8]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
+    op3_link_data_[8]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.000, 0.073, 0.000);
+    op3_link_data_[8]->joint_limit_max_ = 0.5 * M_PI;
+    op3_link_data_[8]->joint_limit_min_ = -0.5 * M_PI;
+    op3_link_data_[8]->inertia_ = robotis_framework::getInertiaXYZ(0.00277, -0.00002, -0.00001, 0.00090, -0.00004,
                                                                    0.00255);
 
     // left arm end effector
-    op3_link_data_[22]->name_ = "l_arm_end";
-    op3_link_data_[22]->parent_ = 6;
-    op3_link_data_[22]->sibling_ = -1;
-    op3_link_data_[22]->child_ = -1;
-    op3_link_data_[22]->mass_ = 0.0;
-    op3_link_data_[22]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.15, 0.0);
-    op3_link_data_[22]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[22]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[22]->joint_limit_max_ = 100.0;
-    op3_link_data_[22]->joint_limit_min_ = -100.0;
-    op3_link_data_[22]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[39]->name_ = "l_arm_end";
+    op3_link_data_[39]->parent_ = 8;
+    op3_link_data_[39]->sibling_ = -1;
+    op3_link_data_[39]->child_ = -1;
+    op3_link_data_[39]->mass_ = 0.0;
+    op3_link_data_[39]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.15, 0.0);
+    op3_link_data_[39]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[39]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[39]->joint_limit_max_ = 100.0;
+    op3_link_data_[39]->joint_limit_min_ = -100.0;
+    op3_link_data_[39]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
     /* ----- right leg -----*/
 
-    // right leg hip yaw
-    op3_link_data_[7]->name_ = "r_hip_yaw";
-    op3_link_data_[7]->parent_ = 29;
-    op3_link_data_[7]->sibling_ = 8;
-    op3_link_data_[7]->child_ = 9;
-    op3_link_data_[7]->mass_ = 0.243;
-    op3_link_data_[7]->relative_position_ = robotis_framework::getTransitionXYZ(-0.005, -0.035, -0.0907);
-    op3_link_data_[7]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -1.0);
-    op3_link_data_[7]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.012, 0.000, -0.025);
-    op3_link_data_[7]->joint_limit_max_ = 0.45 * M_PI;
-    op3_link_data_[7]->joint_limit_min_ = -0.45 * M_PI;
-    op3_link_data_[7]->inertia_ = robotis_framework::getInertiaXYZ(0.00024, 0.00000, 0.00000, 0.00101, 0.00000,
-                                                                   0.00092);
-
     // right leg hip roll
     op3_link_data_[9]->name_ = "r_hip_roll";
-    op3_link_data_[9]->parent_ = 7;
-    op3_link_data_[9]->sibling_ = -1;
+    op3_link_data_[9]->parent_ = 29;
+    op3_link_data_[9]->sibling_ = 10;
     op3_link_data_[9]->child_ = 11;
     op3_link_data_[9]->mass_ = 1.045;
     op3_link_data_[9]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, -0.0285);
@@ -311,94 +326,94 @@ OP3KinematicsDynamics::OP3KinematicsDynamics(TreeSelect tree)
     op3_link_data_[9]->inertia_ = robotis_framework::getInertiaXYZ(0.00056, 0.00000, 0.00000, 0.00168, 0.00000,
                                                                    0.00171);
 
-    // right leg hip pitch
-    op3_link_data_[11]->name_ = "r_hip_pitch";
+    // right leg hip yaw
+    op3_link_data_[11]->name_ = "r_hip_yaw";
     op3_link_data_[11]->parent_ = 9;
     op3_link_data_[11]->sibling_ = -1;
     op3_link_data_[11]->child_ = 13;
-    op3_link_data_[11]->mass_ = 3.095;
-    op3_link_data_[11]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, 0.000);
-    op3_link_data_[11]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, -1.0, 0.0);
-    op3_link_data_[11]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.022, 0.007, -0.168);
-    op3_link_data_[11]->joint_limit_max_ = 0.4 * M_PI;
-    op3_link_data_[11]->joint_limit_min_ = -0.4 * M_PI;
-    op3_link_data_[11]->inertia_ = robotis_framework::getInertiaXYZ(0.04329, -0.00027, 0.00286, 0.04042, 0.00203,
-                                                                    0.00560);
+    op3_link_data_[11]->mass_ = 0.243;
+    op3_link_data_[11]->relative_position_ = robotis_framework::getTransitionXYZ(-0.005, -0.035, -0.0907);
+    op3_link_data_[11]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -1.0);
+    op3_link_data_[11]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.012, 0.000, -0.025);
+    op3_link_data_[11]->joint_limit_max_ = 0.45 * M_PI;
+    op3_link_data_[11]->joint_limit_min_ = -0.45 * M_PI;
+    op3_link_data_[11]->inertia_ = robotis_framework::getInertiaXYZ(0.00024, 0.00000, 0.00000, 0.00101, 0.00000,
+                                                                   0.00092);
 
-    // right leg knee
-    op3_link_data_[13]->name_ = "r_knee";
+    // right leg hip pitch
+    op3_link_data_[13]->name_ = "r_hip_pitch";
     op3_link_data_[13]->parent_ = 11;
     op3_link_data_[13]->sibling_ = -1;
     op3_link_data_[13]->child_ = 15;
-    op3_link_data_[13]->mass_ = 2.401;
-    op3_link_data_[13]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, -0.110);
+    op3_link_data_[13]->mass_ = 3.095;
+    op3_link_data_[13]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, 0.000);
     op3_link_data_[13]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, -1.0, 0.0);
-    op3_link_data_[13]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.002, 0.066, -0.183);
-    op3_link_data_[13]->joint_limit_max_ = 0.1 * M_PI;
-    op3_link_data_[13]->joint_limit_min_ = -0.7 * M_PI;
-    op3_link_data_[13]->inertia_ = robotis_framework::getInertiaXYZ(0.01971, -0.00031, -0.00294, 0.01687, -0.00140,
-                                                                    0.00574);
+    op3_link_data_[13]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.022, 0.007, -0.168);
+    op3_link_data_[13]->joint_limit_max_ = 0.4 * M_PI;
+    op3_link_data_[13]->joint_limit_min_ = -0.4 * M_PI;
+    op3_link_data_[13]->inertia_ = robotis_framework::getInertiaXYZ(0.04329, -0.00027, 0.00286, 0.04042, 0.00203,
+                                                                    0.00560);
 
-    // right leg ankle pitch
-    op3_link_data_[15]->name_ = "r_ank_pitch";
+    // right leg knee
+    op3_link_data_[15]->name_ = "r_knee";
     op3_link_data_[15]->parent_ = 13;
     op3_link_data_[15]->sibling_ = -1;
     op3_link_data_[15]->child_ = 17;
-    op3_link_data_[15]->mass_ = 1.045;
+    op3_link_data_[15]->mass_ = 2.401;
     op3_link_data_[15]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, -0.110);
-    op3_link_data_[15]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 1.0, 0.0);
-    op3_link_data_[15]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.011, 0.033, 0.000);
-    op3_link_data_[15]->joint_limit_max_ = 0.45 * M_PI;
-    op3_link_data_[15]->joint_limit_min_ = -0.45 * M_PI;
-    op3_link_data_[15]->inertia_ = robotis_framework::getInertiaXYZ(0.00056, 0.00000, 0.00000, 0.00168, 0.00000,
+    op3_link_data_[15]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, -1.0, 0.0);
+    op3_link_data_[15]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.002, 0.066, -0.183);
+    op3_link_data_[15]->joint_limit_max_ = 0.1 * M_PI;
+    op3_link_data_[15]->joint_limit_min_ = -0.7 * M_PI;
+    op3_link_data_[15]->inertia_ = robotis_framework::getInertiaXYZ(0.01971, -0.00031, -0.00294, 0.01687, -0.00140,
+                                                                    0.00574);
+
+    // right leg ankle pitch
+    op3_link_data_[17]->name_ = "r_ank_pitch";
+    op3_link_data_[17]->parent_ = 15;
+    op3_link_data_[17]->sibling_ = -1;
+    op3_link_data_[17]->child_ = 19;
+    op3_link_data_[17]->mass_ = 1.045;
+    op3_link_data_[17]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, -0.110);
+    op3_link_data_[17]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 1.0, 0.0);
+    op3_link_data_[17]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.011, 0.033, 0.000);
+    op3_link_data_[17]->joint_limit_max_ = 0.45 * M_PI;
+    op3_link_data_[17]->joint_limit_min_ = -0.45 * M_PI;
+    op3_link_data_[17]->inertia_ = robotis_framework::getInertiaXYZ(0.00056, 0.00000, 0.00000, 0.00168, 0.00000,
                                                                     0.00171);
 
     // right leg ankle roll
-    op3_link_data_[17]->name_ = "r_ank_roll";
-    op3_link_data_[17]->parent_ = 15;
-    op3_link_data_[17]->sibling_ = -1;
-    op3_link_data_[17]->child_ = 31;
-    op3_link_data_[17]->mass_ = 0.223;
-    op3_link_data_[17]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, 0.000);
-    op3_link_data_[17]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
-    op3_link_data_[17]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.070, 0.000, -0.048);
-    op3_link_data_[17]->joint_limit_max_ = 0.45 * M_PI;
-    op3_link_data_[17]->joint_limit_min_ = -0.45 * M_PI;
-    op3_link_data_[17]->inertia_ = robotis_framework::getInertiaXYZ(0.00022, 0.00000, -0.00001, 0.00099, 0.00000,
+    op3_link_data_[19]->name_ = "r_ank_roll";
+    op3_link_data_[19]->parent_ = 17;
+    op3_link_data_[19]->sibling_ = -1;
+    op3_link_data_[19]->child_ = 40;
+    op3_link_data_[19]->mass_ = 0.223;
+    op3_link_data_[19]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, 0.000);
+    op3_link_data_[19]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
+    op3_link_data_[19]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.070, 0.000, -0.048);
+    op3_link_data_[19]->joint_limit_max_ = 0.45 * M_PI;
+    op3_link_data_[19]->joint_limit_min_ = -0.45 * M_PI;
+    op3_link_data_[19]->inertia_ = robotis_framework::getInertiaXYZ(0.00022, 0.00000, -0.00001, 0.00099, 0.00000,
                                                                     0.00091);
 
     // right leg end
-    op3_link_data_[31]->name_ = "r_leg_end";
-    op3_link_data_[31]->parent_ = 17;
-    op3_link_data_[31]->sibling_ = -1;
-    op3_link_data_[31]->child_ = -1;
-    op3_link_data_[31]->mass_ = 0.0;
-    op3_link_data_[31]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -0.0305);
-    op3_link_data_[31]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[31]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[31]->joint_limit_max_ = 100.0;
-    op3_link_data_[31]->joint_limit_min_ = -100.0;
-    op3_link_data_[31]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[40]->name_ = "r_leg_end";
+    op3_link_data_[40]->parent_ = 19;
+    op3_link_data_[40]->sibling_ = -1;
+    op3_link_data_[40]->child_ = -1;
+    op3_link_data_[40]->mass_ = 0.0;
+    op3_link_data_[40]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -0.0305);
+    op3_link_data_[40]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[40]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[40]->joint_limit_max_ = 100.0;
+    op3_link_data_[40]->joint_limit_min_ = -100.0;
+    op3_link_data_[40]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
     /* ----- left leg -----*/
 
-    // left leg hip yaw
-    op3_link_data_[8]->name_ = "l_hip_yaw";
-    op3_link_data_[8]->parent_ = 29;
-    op3_link_data_[8]->sibling_ = -1;
-    op3_link_data_[8]->child_ = 10;
-    op3_link_data_[8]->mass_ = 0.243;
-    op3_link_data_[8]->relative_position_ = robotis_framework::getTransitionXYZ(-0.005, 0.035, -0.0907);
-    op3_link_data_[8]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -1.0);
-    op3_link_data_[8]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.012, 0.000, -0.025);
-    op3_link_data_[8]->joint_limit_max_ = 0.45 * M_PI;
-    op3_link_data_[8]->joint_limit_min_ = -0.45 * M_PI;
-    op3_link_data_[8]->inertia_ = robotis_framework::getInertiaXYZ(0.00024, 0.00000, 0.00000, 0.00101, 0.00000,
-                                                                   0.00092);
-
     // left leg hip roll
     op3_link_data_[10]->name_ = "l_hip_roll";
-    op3_link_data_[10]->parent_ = 8;
+    op3_link_data_[10]->parent_ = 29;
     op3_link_data_[10]->sibling_ = -1;
     op3_link_data_[10]->child_ = 12;
     op3_link_data_[10]->mass_ = 1.045;
@@ -410,74 +425,88 @@ OP3KinematicsDynamics::OP3KinematicsDynamics(TreeSelect tree)
     op3_link_data_[10]->inertia_ = robotis_framework::getInertiaXYZ(0.00056, 0.00000, 0.00000, 0.00168, 0.00000,
                                                                     0.00171);
 
-    // left leg hip pitch
-    op3_link_data_[12]->name_ = "l_hip_pitch";
+    // left leg hip yaw
+    op3_link_data_[12]->name_ = "l_hip_yaw";
     op3_link_data_[12]->parent_ = 10;
     op3_link_data_[12]->sibling_ = -1;
     op3_link_data_[12]->child_ = 14;
-    op3_link_data_[12]->mass_ = 3.095;
-    op3_link_data_[12]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[12]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 1.0, 0.0);
-    op3_link_data_[12]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.022, -0.007, -0.168);
-    op3_link_data_[12]->joint_limit_max_ = 0.4 * M_PI;
-    op3_link_data_[12]->joint_limit_min_ = -0.4 * M_PI;
-    op3_link_data_[12]->inertia_ = robotis_framework::getInertiaXYZ(0.04328, 0.00028, 0.00288, 0.04042, -0.00202,
-                                                                    0.00560);
+    op3_link_data_[12]->mass_ = 0.243;
+    op3_link_data_[12]->relative_position_ = robotis_framework::getTransitionXYZ(-0.005, 0.035, -0.0907);
+    op3_link_data_[12]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -1.0);
+    op3_link_data_[12]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.012, 0.000, -0.025);
+    op3_link_data_[12]->joint_limit_max_ = 0.45 * M_PI;
+    op3_link_data_[12]->joint_limit_min_ = -0.45 * M_PI;
+    op3_link_data_[12]->inertia_ = robotis_framework::getInertiaXYZ(0.00024, 0.00000, 0.00000, 0.00101, 0.00000,
+                                                                   0.00092);
 
-    // left leg knee pitch
-    op3_link_data_[14]->name_ = "l_knee";
+    // left leg hip pitch
+    op3_link_data_[14]->name_ = "l_hip_pitch";
     op3_link_data_[14]->parent_ = 12;
     op3_link_data_[14]->sibling_ = -1;
     op3_link_data_[14]->child_ = 16;
-    op3_link_data_[14]->mass_ = 2.401;
-    op3_link_data_[14]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, -0.110);
+    op3_link_data_[14]->mass_ = 3.095;
+    op3_link_data_[14]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
     op3_link_data_[14]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 1.0, 0.0);
-    op3_link_data_[14]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.002, -0.066, -0.183);
-    op3_link_data_[14]->joint_limit_max_ = 0.7 * M_PI;
-    op3_link_data_[14]->joint_limit_min_ = -0.1 * M_PI;
-    op3_link_data_[14]->inertia_ = robotis_framework::getInertiaXYZ(0.01971, 0.00031, -0.00294, 0.01687, 0.00140,
-                                                                    0.00574);
+    op3_link_data_[14]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.022, -0.007, -0.168);
+    op3_link_data_[14]->joint_limit_max_ = 0.4 * M_PI;
+    op3_link_data_[14]->joint_limit_min_ = -0.4 * M_PI;
+    op3_link_data_[14]->inertia_ = robotis_framework::getInertiaXYZ(0.04328, 0.00028, 0.00288, 0.04042, -0.00202,
+                                                                    0.00560);
 
-    // left leg ankle pitch
-    op3_link_data_[16]->name_ = "l_ank_pitch";
+    // left leg knee pitch
+    op3_link_data_[16]->name_ = "l_knee";
     op3_link_data_[16]->parent_ = 14;
     op3_link_data_[16]->sibling_ = -1;
     op3_link_data_[16]->child_ = 18;
-    op3_link_data_[16]->mass_ = 1.045;
+    op3_link_data_[16]->mass_ = 2.401;
     op3_link_data_[16]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, -0.110);
-    op3_link_data_[16]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, -1.0, 0.0);
-    op3_link_data_[16]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.011, -0.033, 0.000);
-    op3_link_data_[16]->joint_limit_max_ = 0.45 * M_PI;
-    op3_link_data_[16]->joint_limit_min_ = -0.45 * M_PI;
-    op3_link_data_[16]->inertia_ = robotis_framework::getInertiaXYZ(0.00056, 0.00000, 0.00000, 0.00168, 0.00000,
+    op3_link_data_[16]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 1.0, 0.0);
+    op3_link_data_[16]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.002, -0.066, -0.183);
+    op3_link_data_[16]->joint_limit_max_ = 0.7 * M_PI;
+    op3_link_data_[16]->joint_limit_min_ = -0.1 * M_PI;
+    op3_link_data_[16]->inertia_ = robotis_framework::getInertiaXYZ(0.01971, 0.00031, -0.00294, 0.01687, 0.00140,
+                                                                    0.00574);
+
+    // left leg ankle pitch
+    op3_link_data_[18]->name_ = "l_ank_pitch";
+    op3_link_data_[18]->parent_ = 16;
+    op3_link_data_[18]->sibling_ = -1;
+    op3_link_data_[18]->child_ = 20;
+    op3_link_data_[18]->mass_ = 1.045;
+    op3_link_data_[18]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, -0.110);
+    op3_link_data_[18]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, -1.0, 0.0);
+    op3_link_data_[18]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.011, -0.033, 0.000);
+    op3_link_data_[18]->joint_limit_max_ = 0.45 * M_PI;
+    op3_link_data_[18]->joint_limit_min_ = -0.45 * M_PI;
+    op3_link_data_[18]->inertia_ = robotis_framework::getInertiaXYZ(0.00056, 0.00000, 0.00000, 0.00168, 0.00000,
                                                                     0.00171);
 
     // left leg ankle roll
-    op3_link_data_[18]->name_ = "l_ank_roll";
-    op3_link_data_[18]->parent_ = 16;
-    op3_link_data_[18]->sibling_ = -1;
-    op3_link_data_[18]->child_ = 30;
-    op3_link_data_[18]->mass_ = 0.223;
-    op3_link_data_[18]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, 0.000);
-    op3_link_data_[18]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
-    op3_link_data_[18]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.070, 0.000, -0.048);
-    op3_link_data_[18]->joint_limit_max_ = 0.45 * M_PI;
-    op3_link_data_[18]->joint_limit_min_ = -0.45 * M_PI;
-    op3_link_data_[18]->inertia_ = robotis_framework::getInertiaXYZ(0.00022, 0.00000, -0.00001, 0.00099, 0.00000,
+    op3_link_data_[20]->name_ = "l_ank_roll";
+    op3_link_data_[20]->parent_ = 18;
+    op3_link_data_[20]->sibling_ = -1;
+    op3_link_data_[20]->child_ = 41;
+    op3_link_data_[20]->mass_ = 0.223;
+    op3_link_data_[20]->relative_position_ = robotis_framework::getTransitionXYZ(0.000, 0.000, 0.000);
+    op3_link_data_[20]->joint_axis_ = robotis_framework::getTransitionXYZ(1.0, 0.0, 0.0);
+    op3_link_data_[20]->center_of_mass_ = robotis_framework::getTransitionXYZ(-0.070, 0.000, -0.048);
+    op3_link_data_[20]->joint_limit_max_ = 0.45 * M_PI;
+    op3_link_data_[20]->joint_limit_min_ = -0.45 * M_PI;
+    op3_link_data_[20]->inertia_ = robotis_framework::getInertiaXYZ(0.00022, 0.00000, -0.00001, 0.00099, 0.00000,
                                                                     0.00091);
 
     // left leg end
-    op3_link_data_[30]->name_ = "l_leg_end";
-    op3_link_data_[30]->parent_ = 18;
-    op3_link_data_[30]->sibling_ = -1;
-    op3_link_data_[30]->child_ = -1;
-    op3_link_data_[30]->mass_ = 0.0;
-    op3_link_data_[30]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -0.0305);
-    op3_link_data_[30]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[30]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
-    op3_link_data_[30]->joint_limit_max_ = 100.0;
-    op3_link_data_[30]->joint_limit_min_ = -100.0;
-    op3_link_data_[30]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    op3_link_data_[41]->name_ = "l_leg_end";
+    op3_link_data_[41]->parent_ = 20;
+    op3_link_data_[41]->sibling_ = -1;
+    op3_link_data_[41]->child_ = -1;
+    op3_link_data_[41]->mass_ = 0.0;
+    op3_link_data_[41]->relative_position_ = robotis_framework::getTransitionXYZ(0.0, 0.0, -0.0305);
+    op3_link_data_[41]->joint_axis_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[41]->center_of_mass_ = robotis_framework::getTransitionXYZ(0.0, 0.0, 0.0);
+    op3_link_data_[41]->joint_limit_max_ = 100.0;
+    op3_link_data_[41]->joint_limit_min_ = -100.0;
+    op3_link_data_[41]->inertia_ = robotis_framework::getInertiaXYZ(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
   }
 
   thigh_length_m_ = std::fabs(op3_link_data_[ID_R_LEG_START + 2 * 3]->relative_position_.coeff(2, 0));

@@ -39,7 +39,7 @@ using namespace robotis_framework;
 using namespace dynamixel;
 using namespace robotis_op;
 
-const int BAUD_RATE = 2000000;
+const int BAUD_RATE = 1000000;
 const double PROTOCOL_VERSION = 2.0;
 const int SUB_CONTROLLER_ID = 200;
 const int DXL_BROADCAST_ID = 254;
@@ -130,6 +130,10 @@ void dxlTorqueCheckCallback(const std_msgs::String::ConstPtr& msg)
       torque_on = false;
   }
 
+  /** TODO IAwake : update to iterate through all motors and 
+      re-initialize for any loss of connection
+  */
+
   if(torque_on == false)
   {
     controller->stopTimer();
@@ -178,6 +182,7 @@ int main(int argc, char **argv)
     // power on dxls
     int torque_on_count = 0;
 
+/** IAwake TODO: fix this to iterator for direct motor torque enable
     while (torque_on_count < 5)
     {
       int _return = packet_handler->write1ByteTxRx(port_handler, SUB_CONTROLLER_ID, POWER_CTRL_TABLE, 1);
@@ -192,9 +197,11 @@ int main(int argc, char **argv)
       else
         torque_on_count++;
     }
-
+*/
     usleep(100 * 1000);
+    
 
+/** TODO IAwake has not implemented the RGB-LED
     // set RGB-LED to GREEN
     int led_full_unit = 0x1F;
     int led_range = 5;
@@ -203,6 +210,7 @@ int main(int argc, char **argv)
 
     if(_return != 0)
       ROS_ERROR("Fail to control LED [%s]", packet_handler->getRxPacketError(_return));
+*/
 
     port_handler->closePort();
   }
@@ -239,12 +247,20 @@ int main(int argc, char **argv)
   controller->addSensorModule((SensorModule*) OpenCRModule::getInstance());
 
   /* Add Motion Module */
+  ROS_INFO("Loading: ActionModule");
   controller->addMotionModule((MotionModule*) ActionModule::getInstance());
+  ROS_INFO("Loading: BaseModule");
   controller->addMotionModule((MotionModule*) BaseModule::getInstance());
-  controller->addMotionModule((MotionModule*) HeadControlModule::getInstance());
+  /** TODO IAwake: restore all modules */
+  //ROS_INFO("Loading: HeadControlModule");
+  //controller->addMotionModule((MotionModule*) HeadControlModule::getInstance());
+  ROS_INFO("Loading: WalkingModule");
   controller->addMotionModule((MotionModule*) WalkingModule::getInstance());
+  ROS_INFO("Loading: DirectControlModule");
   controller->addMotionModule((MotionModule*) DirectControlModule::getInstance());
+  ROS_INFO("Loading: OnlineWalking");
   controller->addMotionModule((MotionModule*) OnlineWalkingModule::getInstance());
+  ROS_INFO("Loading: TuningModule");
   controller->addMotionModule((MotionModule*) TuningModule::getInstance());
 
   // start timer
@@ -254,10 +270,10 @@ int main(int argc, char **argv)
 
   // go to init pose
   std_msgs::String init_msg;
-  init_msg.data = "ini_pose";
+  init_msg.data = "init_pose";
 
+  ROS_INFO("Manager is initialized, spinning...");
   g_init_pose_pub.publish(init_msg);
-  ROS_INFO("Go to init pose");
 
   while (ros::ok())
   {
