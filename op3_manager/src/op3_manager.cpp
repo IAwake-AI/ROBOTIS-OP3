@@ -252,8 +252,8 @@ int main(int argc, char **argv)
   ROS_INFO("Loading: BaseModule");
   controller->addMotionModule((MotionModule*) BaseModule::getInstance());
   /** TODO IAwake: restore all modules */
-  //ROS_INFO("Loading: HeadControlModule");
-  //controller->addMotionModule((MotionModule*) HeadControlModule::getInstance());
+  ROS_INFO("Loading: HeadControlModule");
+  controller->addMotionModule((MotionModule*) HeadControlModule::getInstance());
   ROS_INFO("Loading: WalkingModule");
   controller->addMotionModule((MotionModule*) WalkingModule::getInstance());
   ROS_INFO("Loading: DirectControlModule");

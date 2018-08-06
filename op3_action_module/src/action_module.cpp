@@ -368,15 +368,17 @@ bool ActionModule::loadFile(std::string file_name)
   FILE* action = fopen(file_name.c_str(), "r+b");
   if (action == 0)
   {
-    //std::string status_msg = "Can not open Action file!";
-    //ROS_ERROR_STREAM(status_msg);
+    std::string status_msg = "Can not open Action file!";
+    ROS_ERROR_STREAM(status_msg);
   
+  /*  TODO I, Awake trying to regen new files
     ROS_INFO("Cannot open Action file, Creating %s", file_name.c_str());
 
     createFile(file_name);
     return true;
-    //publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
-    //return false;
+  */
+    publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
+    return false;
   }
 
   fseek(action, 0, SEEK_END);
