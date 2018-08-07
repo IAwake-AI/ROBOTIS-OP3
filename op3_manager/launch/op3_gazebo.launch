@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <launch>    
     <param name="gazebo"                   value="true"    type="bool"/>
-    <param name="gazebo_robot_name"        value="robotis"/>
+    <param name="gazebo_robot_name"        value="robotis_op3"/>
     
     <param name="offset_file_path"         value="$(find op3_tuning_module)/data/offset.yaml"/>
     <param name="robot_file_path"          value="$(find op3_manager)/config/OP3_IAwake.robot"/>

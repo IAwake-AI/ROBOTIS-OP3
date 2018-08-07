@@ -160,6 +160,15 @@ r_sho_yaw:
   position_p_gain: 800
   return_delay_time: 0
   shutdown: 80
+abs_x:
+  max_position_limit: 4095
+  min_position_limit: 0
+  operating_mode: 3
+  position_d_gain: 0
+  position_i_gain: 0
+  position_p_gain: 800
+  return_delay_time: 0
+  shutdown: 80
 abs_y:
   max_position_limit: 4095
   min_position_limit: 0
