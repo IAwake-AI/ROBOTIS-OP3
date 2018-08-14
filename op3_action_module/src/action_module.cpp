@@ -31,14 +31,14 @@ std::string ActionModule::convertIntToString(int n)
 }
 
 ActionModule::ActionModule()
-    : control_cycle_msec_(30),
+    : control_cycle_msec_(8),
       PRE_SECTION(0),
       MAIN_SECTION(1),
       POST_SECTION(2),
       PAUSE_SECTION(3),
       ZERO_FINISH(0),
       NONE_ZERO_FINISH(1),
-      DEBUG_PRINT(true)
+      DEBUG_PRINT(false)
 {
   /////////////// Const Variable
   /**************************************
@@ -337,13 +337,24 @@ bool ActionModule::verifyChecksum(action_file_define::Page* page)
 
   for (unsigned int i = 0; i < sizeof(action_file_define::Page); i++)
   {
-    checksum += *pt;
-    pt++;
+
+    if(pt != NULL)
+    {
+     checksum += *pt;
+     pt++;
+    }
+    else
+    {
+      ROS_WARN("ActionModule checksum page pointer invalid");
+      return false;
+    }
   }
 
   if (checksum != 0xff)
+  {
+    ROS_WARN("ActionModule checksum didn't verify");
     return false;
-
+  }
   return true;
 }
 
@@ -356,8 +367,17 @@ void ActionModule::setChecksum(action_file_define::Page* page)
 
   for (unsigned int i = 0; i < sizeof(action_file_define::Page); i++)
   {
-    checksum += *pt;
-    pt++;
+    if(pt != NULL)
+    {
+     checksum += *pt;
+     pt++;
+    }
+    else
+    {
+     ROS_WARN("ActionModule set checksum failed: pointer invalid");
+     page->header.checksum = (unsigned char) (0xff);
+     return;
+    }
   }
 
   page->header.checksum = (unsigned char) (0xff - checksum);
@@ -368,17 +388,18 @@ bool ActionModule::loadFile(std::string file_name)
   FILE* action = fopen(file_name.c_str(), "r+b");
   if (action == 0)
   {
-    std::string status_msg = "Can not open Action file!";
+    std::string status_msg = "Cannot open Action file!";
     ROS_ERROR_STREAM(status_msg);
   
-  /*  TODO I, Awake trying to regen new files
+    /**  TODO I, Awake trying to regen new files */
     ROS_INFO("Cannot open Action file, Creating %s", file_name.c_str());
 
     createFile(file_name);
-    return true;
-  */
+
     publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
-    return false;
+ 
+    return true;
+    //return false;
   }
 
   fseek(action, 0, SEEK_END);
@@ -403,7 +424,7 @@ bool ActionModule::createFile(std::string file_name)
   FILE* action = fopen(file_name.c_str(), "ab");
   if (action == 0)
   {
-    std::string status_msg = "Can not create Action file!";
+    std::string status_msg = "Cannot create Action file!";
     ROS_ERROR_STREAM(status_msg);
     publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
     return false;
@@ -428,7 +449,7 @@ bool ActionModule::start(int page_number)
   if (page_number < 1 || page_number >= action_file_define::MAXNUM_PAGE)
   {
 
-    std::string status_msg = "Can not play page.(" + convertIntToString(page_number) + " is invalid index)";
+    std::string status_msg = "Cannot play page.(" + convertIntToString(page_number) + " is invalid index)";
     ROS_ERROR_STREAM(status_msg);
     publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
     return false;
@@ -458,7 +479,7 @@ bool ActionModule::start(std::string page_name)
   if (index == action_file_define::MAXNUM_PAGE)
   {
     std::string str_name_page = page_name;
-    std::string status_msg = "Can not play page.(" + str_name_page + " is invalid name)\n";
+    std::string status_msg = "Cannot play page.(" + str_name_page + " is invalid name)\n";
     ROS_ERROR_STREAM(status_msg);
     publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
     return false;
