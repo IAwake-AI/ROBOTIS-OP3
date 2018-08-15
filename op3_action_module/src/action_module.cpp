@@ -100,7 +100,7 @@ void ActionModule::initialize(const int control_cycle_msec, robotis_framework::R
 
   ros::NodeHandle ros_node;
 
-  std::string path = ros::package::getPath("op3_action_module") + "/data/motion_4095.bin";
+  std::string path = ros::package::getPath("op3_action_module") + "/data/motion_4095_bk.bin";
   std::string action_file_path = ros_node.param<std::string>("action_file_path", path);
 
   loadFile(action_file_path);
@@ -403,6 +403,7 @@ bool ActionModule::loadFile(std::string file_name)
   }
 
   fseek(action, 0, SEEK_END);
+
   if (ftell(action) != (long) (sizeof(action_file_define::Page) * action_file_define::MAXNUM_PAGE))
   {
     std::string status_msg = "It's not an Action file!";
