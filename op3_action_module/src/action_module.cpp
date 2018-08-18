@@ -398,8 +398,8 @@ bool ActionModule::loadFile(std::string file_name)
 
     publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
  
-    return true;
-    //return false;
+    //return true;
+    return false;
   }
 
   fseek(action, 0, SEEK_END);

@@ -23,7 +23,7 @@ namespace robotis_op
 {
 
 TuningModule::TuningModule()
-  : control_cycle_msec_(30),
+  : control_cycle_msec_(8),
     has_goal_joints_(false),
     ini_pose_only_(false),
     get_tuning_data_(false)
