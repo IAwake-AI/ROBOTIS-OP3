@@ -100,7 +100,7 @@ void ActionModule::initialize(const int control_cycle_msec, robotis_framework::R
 
   ros::NodeHandle ros_node;
 
-  std::string path = ros::package::getPath("op3_action_module") + "/data/motion_4095_bk.bin";
+  std::string path = ros::package::getPath("op3_action_module") + "/data/motion_4095_new.bin";
   std::string action_file_path = ros_node.param<std::string>("action_file_path", path);
 
   loadFile(action_file_path);
@@ -407,10 +407,11 @@ bool ActionModule::loadFile(std::string file_name)
   if (ftell(action) != (long) (sizeof(action_file_define::Page) * action_file_define::MAXNUM_PAGE))
   {
     std::string status_msg = "It's not an Action file!";
-    ROS_ERROR_STREAM(status_msg);
-    publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
-    fclose(action);
-    return false;
+    ROS_INFO("Failed to load: %s", file_name.c_str());
+    //ROS_ERROR_STREAM(status_msg);
+    //publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
+    //fclose(action);
+    //return false;
   }
 
   if (action_file_ != 0)
@@ -572,6 +573,7 @@ bool ActionModule::savePage(int page_number, action_file_define::Page* page)
   if (fwrite(page, 1, sizeof(action_file_define::Page), action_file_) != sizeof(action_file_define::Page))
     return false;
 
+  ROS_INFO("page save succeeded");
   return true;
 }
 
