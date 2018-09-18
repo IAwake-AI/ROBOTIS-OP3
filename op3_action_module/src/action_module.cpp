@@ -398,8 +398,8 @@ bool ActionModule::loadFile(std::string file_name)
 
     publishStatusMsg(robotis_controller_msgs::StatusMsg::STATUS_ERROR, status_msg);
  
-    return true;
-    //return false;
+    //return true;
+    return false;
   }
 
   fseek(action, 0, SEEK_END);
@@ -422,7 +422,7 @@ bool ActionModule::loadFile(std::string file_name)
 
 bool ActionModule::createFile(std::string file_name)
 {
-  FILE* action = fopen(file_name.c_str(), "ab");
+  FILE* action = fopen(file_name.c_str(), "a+b");
   if (action == 0)
   {
     std::string status_msg = "Cannot create Action file!";
